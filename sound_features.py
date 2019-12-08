@@ -47,5 +47,5 @@ def create_dataset(soundfile_directory):
     df.to_csv("./sound files/audio classifier data/data/cats_dogs.csv")
 
 
-create_dataset(file_directory)
+# create_dataset(file_directory)
 
