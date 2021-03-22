@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 # file = open("./sound files/test/greetings.wav", 'rb')
-file_directory = "./sound files/audio classifier data/cats_dogs/all_data"
+file_directory = "./sound_files/audio_classifier_data/cats_dogs/all_data"
 
 
 def get_features(sound_file):
@@ -48,4 +48,6 @@ def create_dataset(soundfile_directory):
 
 
 # create_dataset(file_directory)
+
+print(get_features(file_directory + "/cat_35.wav"))
 

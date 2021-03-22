@@ -1,5 +1,6 @@
 import time
 import sounddevice as sd
+import simpleaudio as sa
 
 import soundfile as sf
 from playsound import playsound
@@ -24,6 +25,11 @@ def record(filename):
 def play(filename):
     playsound(filename)
 
+def playwave(filename):
+    wav_obj = sa.WaveObject.from_wave_file(filename)
+    play_obj = wav_obj.play()
+    play_obj.wait_done()
+
 
 def combine_sounds(file1, file2, output_file):
     greetings_frames, greetings_data = wavfile.read(file1)
@@ -32,7 +38,10 @@ def combine_sounds(file1, file2, output_file):
     sf.write(output_file, combined_data, fs)
 
 
+filename = 'greetings.wav'
 
+# playwave("./sound files/audio classifier data/cats_dogs/all_data/cat_1.wav")
+playwave(filename)
 
 
 

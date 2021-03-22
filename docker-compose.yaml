@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  debug:
+    container_name: tensorflowtest
+    # image: tensorflow/tensorflow:latest-py3
+    build:
+      context: .
+      target: debug
+    volumes: 
+      - ./src:/app
+    ports:
+      - 5003:5000
+      - 5678:5678
