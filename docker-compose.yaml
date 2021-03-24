@@ -5,6 +5,7 @@ services:
     # image: tensorflow/tensorflow:latest-py3
     build:
       context: .
+      dockerfile: ./Dockerfile
       target: debug
     volumes: 
       - ./src:/app

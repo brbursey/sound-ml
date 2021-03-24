@@ -12,11 +12,12 @@ model = cdm.CatDogModel()
 
 
 def get_file(filename):
-    return f"./sound files/audio classifier data/cats_dogs/all_data/{filename}"
+    return f"./sound_files/audio_classifier_data/cats_dogs/all_data/{filename}"
 
 
 @app.route("/")
 def hello():
+    create_model()
     return "Hello World!"
 
 
@@ -45,14 +46,13 @@ def predict():
     else:
         return "Unable to tell what the heck that creature is"
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80)
+def create_model():
     print("Checking to see if model exists...")
     if not os.path.exists("./sound_model.h5"):
         print("Training model...")
         model.create_model()
     print("Model exists. Ready to go!")
-    app.run(host='localhost', port=8080, debug=True)
+    # app.run(host='localhost', port=5000, debug=True)
 
 
 

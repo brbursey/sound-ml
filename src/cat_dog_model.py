@@ -11,7 +11,7 @@ class CatDogModel:
         self.model = tf.keras.Sequential()
 
     def create_model(self):
-        data = pd.read_csv("./sound files/audio classifier data/data/cats_dogs.csv")
+        data = pd.read_csv("./sound_files/audio_classifier_data/data/cats_dogs.csv")
         label = data.columns[-1]
         data = data.drop(['Unnamed: 0', 'Filename'], axis=1)
         X = self.__scale_data(data)

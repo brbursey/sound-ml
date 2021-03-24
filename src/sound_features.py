@@ -49,5 +49,5 @@ def create_dataset(soundfile_directory):
 
 # create_dataset(file_directory)
 
-print(get_features(file_directory + "/cat_35.wav"))
+# print(get_features(file_directory + "/cat_35.wav"))
 
